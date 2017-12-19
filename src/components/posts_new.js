@@ -25,8 +25,11 @@ class PostsNew extends Component {
   }
 
   onSubmit(values) {
-    this.props.createPost(values);
+    this.props.createPost(values, () => {
+      this.props.history.push('/');      
+    });
   }
+
   render() {
     const { handleSubmit } = this.props;
 
@@ -56,6 +59,7 @@ class PostsNew extends Component {
 
 function validate(values) {
   const errors = {};
+
   if (!values.title) {
     errors.tilte = "Enter a title";
   }
@@ -71,6 +75,4 @@ function validate(values) {
 export default reduxForm({
   validate,
   form: 'PostsNewForm'
-})(
-  connect(null, { createPost })(PostsNew)
-);
+})(connect(null, { createPost })(PostsNew));

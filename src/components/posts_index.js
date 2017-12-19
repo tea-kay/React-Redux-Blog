@@ -33,7 +33,7 @@ class PostsIndex extends Component {
           {this.renderPosts()}
         </ul>
       </div>
-    )
+    );
   }
 }
 
