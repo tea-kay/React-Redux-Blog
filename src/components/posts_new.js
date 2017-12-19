@@ -11,7 +11,7 @@ class PostsNew extends Component {
 
     return (
       <div className={className}>
-        <label>{field.label}}</label>
+        <label>{field.label}</label>
         <input
           className="form-control"
           type="text"
@@ -26,7 +26,7 @@ class PostsNew extends Component {
 
   onSubmit(values) {
     this.props.createPost(values, () => {
-      this.props.history.push('/');      
+      this.props.history.push('/');
     });
   }
 
